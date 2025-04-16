@@ -1,0 +1,445 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff0f5;
+    color: #333;
+    line-height: 1.6;
+    background-image: linear-gradient(120deg, #f8bbd0 0%, #fce4ec 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Login Styles */
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 3px solid #f8bbd0;
+}
+
+.login-form h2 {
+    margin-bottom: 15px;
+    color: #ec407a;
+    font-size: 28px;
+}
+
+.heart-icon {
+    font-size: 32px;
+    color: #ec407a;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #f8bbd0;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ec407a;
+    outline: none;
+}
+
+#login-btn {
+    background: #ec407a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+#login-btn:hover {
+    background: #d81b60;
+}
+
+#error-message {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Header Styles */
+header {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f8bbd0;
+}
+
+header h1 {
+    text-align: center;
+    color: #ec407a;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+header h1 i {
+    margin: 0 10px;
+    color: #ec407a;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    display: block;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: #ec407a;
+    color: white;
+}
+
+/* Main Content Styles */
+main {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border: 2px solid #f8bbd0;
+}
+
+section {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+section.section-active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section h2 {
+    text-align: center;
+    color: #ec407a;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fce4ec;
+}
+
+.content-box {
+    padding: 20px;
+}
+
+.quote {
+    background: #fce4ec;
+    padding: 20px;
+    border-left: 4px solid #ec407a;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #555;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.friendship-facts {
+    margin-top: 25px;
+}
+
+.friendship-facts h3 {
+    margin-bottom: 15px;
+    color: #d81b60;
+}
+
+.friendship-facts ul {
+    padding-left: 20px;
+}
+
+.friendship-facts li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+.friendship-facts li:before {
+    content: "♥";
+    position: absolute;
+    left: 0;
+    color: #ec407a;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #f8bbd0;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.placeholder-image {
+    height: 180px;
+    background: linear-gradient(120deg, #f8bbd0 0%, #fce4ec 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3em;
+}
+
+.gallery-item p {
+    padding: 10px;
+    background: white;
+    color: #d81b60;
+    font-weight: bold;
+}
+
+.gallery-note {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Messages Styles */
+.messages-container {
+    margin-bottom: 30px;
+}
+
+.message {
+    background: #fce4ec;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 3px solid #ec407a;
+    transition: transform 0.3s;
+}
+
+.message:hover {
+    transform: translateY(-5px);
+}
+
+.special-message {
+    background: linear-gradient(120deg, #f8bbd0 0%, #fce4ec 100%);
+    border: 2px dashed #ec407a;
+    border-left: 3px solid #ec407a;
+}
+
+.message-text {
+    font-style: italic;
+}
+
+.author {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #d81b60;
+}
+
+.new-message {
+    background: #fce4ec;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.new-message h3 {
+    margin-bottom: 15px;
+    color: #d81b60;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #f8bbd0;
+    border-radius: 5px;
+    height: 100px;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.new-message button {
+    background: #ec407a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-message button:hover {
+    background: #d81b60;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.dedication {
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.signature {
+    font-weight: bold;
+    color: #d81b60;
+    margin-top: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #f8bbd0;
+}
+
+footer i {
+    color: #ec407a;
+}
+
+#logout-btn {
+    background: #ec407a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#logout-btn:hover {
+    background: #d81b60;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer {
+        flex-direction: column;
+    }
+    
+    footer p {
+        margin-bottom: 15px;
+    }
+}
+
+/* Animations */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.heart-icon i {
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Añade esto al archivo CSS existente para que las imágenes se vean bien */
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
