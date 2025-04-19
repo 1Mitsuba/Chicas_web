@@ -254,6 +254,7 @@ cite {
     object-fit: cover;
     display: block;
 }
+
 .gallery-item:hover {
     transform: translateY(-5px);
 }
