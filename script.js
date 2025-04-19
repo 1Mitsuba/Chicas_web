@@ -1,6 +1,6 @@
 // Variables para el inicio de sesión
 const USERNAME = "chiques";
-const PASSWORD = "16/04/2025";
+const PASSWORD = "20/04/2025";
 
 // Elementos del DOM
 const loginContainer = document.getElementById('login-container');
