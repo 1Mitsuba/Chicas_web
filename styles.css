@@ -233,20 +233,27 @@ cite {
 /* Gallery Styles */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
     margin-bottom: 20px;
 }
 
-.gallery-item {
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%; /* Ajusta este valor según la altura máxima de tu contenido */
+    object-fit: cover;
+    display: block;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 1px solid #f8bbd0;
-    transition: transform 0.3s;
 }
 
+/* Añade esto al archivo CSS existente para que las imágenes se vean bien */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 .gallery-item:hover {
     transform: translateY(-5px);
 }
