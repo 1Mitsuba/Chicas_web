@@ -105,3 +105,69 @@ publishBtn.addEventListener('click', () => {
         messageTextarea.value = '';
     }
 });
+
+// Configuración del modal de cumpleaños
+const birthdayModal = document.getElementById('birthday-modal');
+const closeBirthdayBtn = document.querySelector('.close-btn');
+const birthdayNameSpan = document.getElementById('birthday-name');
+
+// Configura aquí los cumpleaños de tus amigas - Formato: {nombre: "Nombre", fecha: "DD/MM"}
+const birthdayFriends = [
+    { nombre: "Vale", fecha: "12/08" },
+    { nombre: "María", fecha: "05/11" },
+    { nombre: "Ana", fecha: "22/03" }
+    // Añade más amigas según necesites
+];
+
+// Función para comprobar si hoy es el cumpleaños de alguna amiga
+function checkBirthdays() {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const currentDate = `${day}/${month}`;
+    
+    // Buscar si alguna amiga cumple años hoy
+    const birthdayGirl = birthdayFriends.find(friend => friend.fecha === currentDate);
+    
+    if (birthdayGirl) {
+        // Mostrar el modal con el nombre de la cumpleañera
+        birthdayNameSpan.textContent = birthdayGirl.nombre;
+        birthdayModal.style.display = 'block';
+    }
+}
+
+// Evento para cerrar el modal al hacer clic en la X
+if (closeBirthdayBtn) {
+    closeBirthdayBtn.addEventListener('click', function() {
+        birthdayModal.style.display = 'none';
+    });
+}
+
+// Cerrar el modal si se hace clic fuera de él
+window.addEventListener('click', function(event) {
+    if (event.target === birthdayModal) {
+        birthdayModal.style.display = 'none';
+    }
+});
+
+// Comprobar cumpleaños cuando se cargue la página (después del login)
+document.addEventListener('DOMContentLoaded', function() {
+    // Si hay un evento de login exitoso, comprobar cumpleaños después
+    const loginBtn = document.getElementById('login-btn');
+    if (loginBtn) {
+        const originalLoginFunction = loginBtn.onclick;
+        
+        loginBtn.onclick = function() {
+            // Si hay una función original de login, ejecutarla primero
+            if (typeof originalLoginFunction === 'function') {
+                originalLoginFunction.apply(this);
+            }
+            
+            // Esperar un poco para que se complete el login y luego verificar cumpleaños
+            setTimeout(checkBirthdays, 1000);
+        };
+    } else {
+        // Si no hay sistema de login o ya se ha iniciado sesión
+        checkBirthdays();
+    }
+});
